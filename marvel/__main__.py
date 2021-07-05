@@ -34,26 +34,27 @@ from marvel.modules.translations.strings import tld_help
 from marvel.modules.connection import connected
 
 
-PM_START_TEXT = """Hey there! My name is {} - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
-Join my [news channel](https://t.me/TheBotsupport) to get information on all the latest updates.
-If this bot helped you donate somthing any needed person!
+PM_START_TEXT = """Hey there! My name is Aleena - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
+
+Join my [news channel](https://t.me/FlyingKILI) to get information on all the latest updates.
 """
 
-HELP_STRINGS = """Hey. Now you are in help section!
+HELP_STRINGS = """
+Help
+
+Hey! My name is Aleena. I am a group management bot, here to help you get around and keep the order in your groups!
 I have lots of handy features, such as flood control, a warning system, a note keeping system, and even predetermined replies on certain keywords.
 
 Helpful commands:
 - /start: Starts me! You've probably already used this.
-- /help: If you are here you already used this!
-- /donate: Gives you info on how to support me and my creator.
+- /help: Sends this message; I'll tell you more about myself!
 
-If you have any bugs or questions on how to use me, have a look at my group head to @TheBotSupports.
- 
-All commands can either be used with / or !.
+If you have any bugs or questions on how to use me, Contact @Zues_botz.
+ All commands can be used with the following: / !
 
 And the following:"""#.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-DONATE_STRING = "Okie"
+DONATE_STRING = "No need am rich 😎"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -126,7 +127,7 @@ RANDOM_START = (
     "Why you awaked meh?",
     "Hello there how can i help you?",
     "Arey you human?",
-    "Hey I'm Coded by @noobanon",
+    "Hey I'm Coded by @FlyingKILI",
     "Are you alive ? Umm I think yes",
     "Are you stalking meh ?",
 	"Relax I'm here",
@@ -171,9 +172,7 @@ def start(update, context):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup( 
-                [[InlineKeyboardButton(text="🎉 Add Me", url="t.me/YukoAraki_bot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
-                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/TheBotSupports")],
-                [InlineKeyboardButton(text="Repo", url="https://github.com/noobanon/missmarvel")]])
+                [[InlineKeyboardButton(text="Add to your chat", url="t.me/MissAleena_robot?startgroup=botstart")],
             update.effective_message.reply_text(
                 tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(context.bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
